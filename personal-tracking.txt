@@ -1,0 +1,10 @@
+| Type       | Use when                                   |
+| ---------- | ------------------------------------------ |
+| `init`     | First commit                               |
+| `feat`     | New feature / new code                     |
+| `fix`      | Bug fix                                    |
+| `docs`     | README or documentation                    |
+| `refactor` | Code improvement without changing behavior |
+| `chore`    | Cleanup, config, tooling                   |
+| `test`     | Adding or updating tests                   |
+| `style`    | Formatting only (no logic change)          |
