@@ -29,28 +29,30 @@
 
 import matplotlib.pyplot as plt
 
-def bubbleSort(array):
-    n = len(array)
+def bubbleSort(arr):
+    n = len(arr)
     for i in range(n-1):
+        swapped = False
         for j in range(n-1-i):
-            if array[j] > array[j+1]:
-                array[j], array[j+1] = array[j+1], array[j]
-    return array
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = True
+        if swapped == False:
+            break
+    return arr
 
 a = []
-n = int(input("Enter the number of elements: "))
+n = int(input("Enter the elements you want in array: "))
 for i in range(n):
-    a.append(int(input(f'Enter the {i+1} element : ')))
+    a.append(int(input(f"Enter {i} element: ")))
     
-print(f'Array before sorting: {a}')
-a = bubbleSort(a)
-print(f'Array after sorting: {a}')
+print(f"Array before swapping: {a}")
+bubbleSort(a)
+print(f'Array after swapping {a}')
 
-x = list(range(10000))
-y = list([y*y for y in x])
-plt.plot(x, y)
-plt.xlabel("Time")
-plt.ylabel('input')
-plt.title("The time complexity if bubble sort is : O(n\u00b2)")
-
+x = list(range(1,10000))
+plt.plot(x, [y*y for y in x])
+plt.title("Time complexity of bubble sort is O(n\u00b2)")
+plt.xlabel("Input")
+plt.ylabel("Time")
 plt.show()
