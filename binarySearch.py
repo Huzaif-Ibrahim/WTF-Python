@@ -1,28 +1,54 @@
+# import time
+
+# def binarySearch(a , low, high, key):
+#     if low > high or key not in a:
+#         print("Unseccessful operation")
+#         return
+#     mid = (high+low)//2
+#     if(a[mid] == key):
+#         print(f'The key is at index {mid}')
+#         return 
+#     elif(key > a[mid]):
+#         binarySearch(a, mid+1, high,key)
+#     else:
+#         binarySearch(a, low, mid-1,key)
+        
+# a = []
+# n = int(input("How many elements do you want in a array : "))
+
+# for i in range(n):
+#     a.append(int(input(f"Enter the {i+1} element : ")))
+    
+# key = int(input("Enter the key: "))
+# start = time.time()
+# binarySearch(a, 0, len(a) - 1, key)
+# end = time.time()
+
+# print(f'Time took for the operation : {end-start}')
+
 import time
 
-def binarySearch(a , low, high, key):
+def binarySearch(a, low, high, key):
     if low > high or key not in a:
-        print("Unseccessful operation")
+        print("Unsuccessfull operation!")
         return
-    mid = (high+low)//2
+    mid = (high + low) // 2
     if(a[mid] == key):
         print(f'The key is at index {mid}')
-        return 
     elif(key > a[mid]):
-        binarySearch(a, mid+1, high,key)
-        # return print(f'The key is at index {a[mid]}')
+        binarySearch(a, mid+1, high, key)
     else:
-        binarySearch(a, low, mid-1,key)
+        binarySearch(a, low, mid-1, key)
         
 a = []
-n = int(input("How many elements do you want in a array : "))
-
+n = int(input("Enter the number og elements: "))
 for i in range(n):
-    a.append(int(input(f"Enter the {i+1} element : ")))
+    a.append(int(input(f'Enter the {i+1} element : ')))
     
-key = int(input("Enter the key: "))
+key = int(input("Enter the key : "))
+
 start = time.time()
 binarySearch(a, 0, len(a) - 1, key)
 end = time.time()
 
-print(f'Time took for the operation : {end-start}')
+print(f'The time took for binary search is : {end-start}')
