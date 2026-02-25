@@ -24,3 +24,9 @@ plt.title("Insertion Sort- Time Complexity is O(n\u00b2)")
 plt.xlabel("Input") 
 plt.ylabel("Time") 
 plt.show()
+
+# insertion sort --> only plot
+# bubble sort --> only plot
+# linear search --> time and plot
+# binary search --> only time
+# stack adt
