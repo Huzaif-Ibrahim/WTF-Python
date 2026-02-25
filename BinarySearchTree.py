@@ -61,26 +61,26 @@ class BinarySearchTree:
                     else: 
                         curNode = curNode.right 
  
-def preorder(self, rt): 
-    print(rt.data, end="\t") 
-    if rt.left is not None: 
-        self.preorder(rt.left) 
-    if rt.right is not None: 
-        self.preorder(rt.right)
+    def preorder(self, rt): 
+        print(rt.data, end="\t") 
+        if rt.left is not None: 
+            self.preorder(rt.left) 
+        if rt.right is not None: 
+            self.preorder(rt.right)
         
-def inorder(self, rt): 
-    if rt.left is not None: 
-        self.inorder(rt.left) 
-        print(rt.data, end="\t") 
-    if rt.right is not None: 
-        self.inorder(rt.right) 
+    def inorder(self, rt): 
+        if rt.left is not None: 
+            self.inorder(rt.left) 
+            print(rt.data, end="\t") 
+        if rt.right is not None: 
+            self.inorder(rt.right) 
  
-def postorder(self, rt): 
-    if rt.left is not None: 
-        self.postorder(rt.left) 
-    if rt.right is not None: 
-        self.postorder(rt.right) 
-        print(rt.data, end="\t") 
+    def postorder(self, rt): 
+        if rt.left is not None: 
+            self.postorder(rt.left) 
+        if rt.right is not None: 
+            self.postorder(rt.right) 
+            print(rt.data, end="\t") 
  
 BT = BinarySearchTree() 
  
