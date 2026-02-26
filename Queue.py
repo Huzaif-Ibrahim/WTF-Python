@@ -17,7 +17,7 @@ class Queue:
         if self.IsEmpty(): 
             print("Queue is empty") 
         else: 
-            print(self.qlist) 
+            print(self.qlist)  
  
 queue=Queue() 
 while True: 
