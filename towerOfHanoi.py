@@ -6,4 +6,4 @@ def towerOfHenoi(n, source, destination, auxiliary):
     print(f'Move disc {n} from {source} to {destination}')
     towerOfHenoi(n-1, auxiliary, destination, source)
     
-towerOfHenoi(3, 'A', 'B', 'C')
+towerOfHenoi(3, 'A', 'C', 'B')
