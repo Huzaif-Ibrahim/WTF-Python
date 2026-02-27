@@ -1,10 +1,9 @@
-def TowerOfHanoi(n , source, destination, auxiliary): 
-    if n==1: 
-        print ("Move disk 1 from source",source,"to destination",destination) 
+def towerOfHenoi(n, source, destination, auxiliary):
+    if n == 1:
+        print(f'Move disc 1 from {source} to {destination}')
         return 
-    TowerOfHanoi(n-1, source, auxiliary, destination) 
-    print ("Move disk",n,"from source",source,"to destination",destination) 
-    TowerOfHanoi(n-1, auxiliary, destination, source) 
- 
-n = int(input('Enter the number of disks: ')) 
-TowerOfHanoi(n,'A','B','C') 
+    towerOfHenoi(n-1, source, auxiliary, destination)
+    print(f'Move disc {n} from {source} to {destination}')
+    towerOfHenoi(n-1, auxiliary, destination, source)
+    
+towerOfHenoi(3, 'A', 'B', 'C')
