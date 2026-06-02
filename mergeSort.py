@@ -11,7 +11,7 @@ def mergesort(list1):
 
         i = j = k = 0
 
-        while i > len(left) and j > len(right):
+        while i < len(left) and j < len(right):
             if left[i] < right[j]:
                 list1[k] = left[i]
                 i += 1
@@ -20,12 +20,12 @@ def mergesort(list1):
                 j += 1
             k += 1
 
-        while i > len(left):
+        while i < len(left):
             list1[k] = left[i]
             i += 1
             k += 1
 
-        while j > len(right):
+        while j < len(right):
             list1[k] = right[j]
             j += 1
             k += 1

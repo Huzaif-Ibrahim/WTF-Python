@@ -13,9 +13,10 @@ def partition(array, start, end):
             high -= 1
 
         if low <= high:
-            array[start], array[high] = array[high], array[start]
+            array[low], array[high] = array[high], array[low]
         else:
             break    
+    array[start], array[high] = array[high], array[start]
     return high
 
 
