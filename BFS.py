@@ -1,28 +1,39 @@
-class Stack1:
+class Queue:
     def __init__(self):
-        self.items = []
-    def isEmpty(self):
-        return self.items == []
-    def push(self, item):
-        self.items.append(item)
-    def pop(self):
-        return self.items.pop()
-    
-class BTSNode:
+        self.qlist = []
+
+    def IsEmpty(self):
+        return len(self.qlist) == 0
+
+    def Enqueue(self, item):
+        self.qlist.append(item)
+
+    def Dequeue(self):
+        if self.IsEmpty():
+            print("Queue is Empty")
+        else:
+            return self.qlist.pop(0)
+
+
+class BSTNode:
     def __init__(self, value):
         self.data = value
         self.left = None
         self.right = None
 
+
 class BinarySearchTree:
     def __init__(self):
         self.root = None
+
     def insert(self, value):
-        newNode = BTSNode(value)
+        newNode = BSTNode(value)
+
         if self.root is None:
             self.root = newNode
         else:
             curNode = self.root
+
             while curNode is not None:
                 if value < curNode.data:
                     if curNode.left is None:
@@ -36,25 +47,29 @@ class BinarySearchTree:
                         break
                     else:
                         curNode = curNode.right
-                        
-def DFS(root):
-    s = Stack1()
-    s.push(root)
-    
-    while s.isEmpty() != True:
-        node = s.pop()
-        print(node.data, end='\t')
-        
-        if node.right is not None:
-            s.push(node.right)
-            
+
+
+def BFS(root):
+    Q = Queue()
+    Q.Enqueue(root)
+
+    while Q.IsEmpty() != True:
+        node = Q.Dequeue()
+        print(node.data, end="\t")
+
         if node.left is not None:
-            s.push(node.left)
-            
+            Q.Enqueue(node.left)
+
+        if node.right is not None:
+            Q.Enqueue(node.right)
+
+
 BT = BinarySearchTree()
 
 ls = [25, 10, 35, 20, 5, 30, 40]
-for i in ls: BT.insert(i)
-print("DFS Traversal")
-DFS(BT.root)
-    
+
+for i in ls:
+    BT.insert(i)
+
+print("BFS Traversal")
+BFS(BT.root)

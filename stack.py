@@ -1,10 +1,12 @@
+import time
+
 class Stack():
     def __init__(self):
         self.items = []
     def push(self, item):
         self.items.append(item)
     def pop(self):
-        self.items.pop()
+        return self.items.pop()
     def isEmpty(self):
         return self.items == []
     def peek(self):
@@ -15,6 +17,7 @@ class Stack():
         return len(self.items)
     
 s = Stack()
+start = time.time()
 print("Elements: ", s.display())
 print("Is empty: ",s.isEmpty())
 print("---Push Operations---")
@@ -29,3 +32,5 @@ print("---Pop Operations---")
 s.pop()
 s.pop()
 print("Elements: ", s.display())
+end = time.time()
+print("The Runtime of the program is: ", start-end)
